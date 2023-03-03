@@ -7,12 +7,12 @@ namespace HumanResources.Domain.Entities.Employees
 {
      public abstract class EmployeeEntity : EntityBase
     {
-        public virtual HcmPersonDetailEnity HcmPersonDetailEnity { get; }
-        public virtual HcmEmployeeRole HcmEmployeeRole { get; }
-        public virtual PayrollSalary PayrollSalary { get; }
+        public virtual HcmPersonDetailEntity HcmPersonDetailEntity { get; }
+        public virtual HcmEmployeeRoleEntity HcmEmployeeRoleEntity { get; }
+        public virtual PayrollSalaryEntity PayrollSalaryEntity { get; }
         public string Email { get; }
         public int HcmEmployeeStatusId { get; }
-        public virtual HcmEmployeeStatus HcmEmployeeStatus { get; }
+        public virtual HcmEmployeeStatusEntity HcmEmployeeStatusEntity { get; }
 
 
         public abstract void Payroll();
