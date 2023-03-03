@@ -11,7 +11,7 @@ namespace HumanResources.Domain.Entities.Employees
         public virtual HcmEmployeeRoleEntity HcmEmployeeRoleEntity { get; }
         public virtual PayrollSalaryEntity PayrollSalaryEntity { get; }
         public string Email { get; }
-        public int HcmEmployeeStatusId { get; }
+        public int HcmEmployeeStatusEntityId { get; }
         public virtual HcmEmployeeStatusEntity HcmEmployeeStatusEntity { get; }
 
 
