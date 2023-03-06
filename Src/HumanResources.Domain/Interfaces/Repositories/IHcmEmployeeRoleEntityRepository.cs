@@ -6,7 +6,7 @@ using HumanResources.Domain.Entities.Employees;
 
 namespace HumanResources.Domain.Interfaces.Repositories
 {
-    public interface HcmEmployeeRoleEntityRepository
+    public interface IHcmEmployeeRoleEntityRepository
     {
         Task<HcmEmployeeRoleEntity> GetAll();
 

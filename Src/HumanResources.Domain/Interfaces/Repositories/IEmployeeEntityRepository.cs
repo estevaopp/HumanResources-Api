@@ -6,7 +6,7 @@ using HumanResources.Domain.Entities.Employees;
 
 namespace HumanResources.Domain.Interfaces.Repositories
 {
-    public interface EmployeeEntityRepository
+    public interface IEmployeeEntityRepository
     {
         Task<EmployeeEntity> GetAll();
 
