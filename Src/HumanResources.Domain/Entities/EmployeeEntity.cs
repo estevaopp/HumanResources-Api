@@ -8,25 +8,44 @@ namespace HumanResources.Domain.Entities.Employees
 {
      public abstract class EmployeeEntity : EntityBase
     {
-        public virtual HcmPersonDetailEntity HcmPersonDetailEntity { get; }
-        public virtual HcmEmployeeSeniorityEntity HcmEmployeeSeniorityEntity { get; }
-        public virtual PayrollSalaryEntity PayrollSalaryEntity { get; }
+        public int HcmEmployeeRoleEntityId { get; private set; }
+        public decimal MonthlySalaryFixed { get; private set; }
+        public decimal MonthlySalaryVariable { get; private set; }
+
         public EmployeeStatusEnum EmployeeStatus { get; private set; }
+
         public DateOnly EmploymentStartDate { get; private set; }
+
         public DateOnly EmploymentEndDate { get; private set; }
+
+        public virtual HcmEmployeeRoleEntity HcmEmployeeRoleEntity { get; }
+
+        public virtual HcmPersonDetailEntity HcmPersonDetailEntity { get; }
         
-        public EmployeeEntity()
+
+        protected EmployeeEntity() { }
+
+        protected EmployeeEntity(int hcmEmployeeRoleEntityId, decimal monthlySalaryFixed, decimal monthlySalaryVariable, EmployeeStatusEnum employeeStatus, DateOnly employmentStartDate, DateOnly employmentEndDate)
         {
-            
+            HcmEmployeeRoleEntityId = hcmEmployeeRoleEntityId;
+            MonthlySalaryFixed = monthlySalaryFixed;
+            MonthlySalaryVariable = monthlySalaryVariable;
+            EmployeeStatus = employeeStatus;
+            EmploymentStartDate = employmentStartDate;
+            EmploymentEndDate = employmentEndDate;
         }
 
+
         public abstract void Payroll();
+
         public abstract void DismissEmployee();
+
         public void MissWork()
         {
             EmploymentEndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-3));
             EmployeeStatus = EmployeeStatusEnum.Dismiss;
         }
+        
         public void MissWork(DateOnly employmentEndDate)
         {
             EmploymentEndDate = employmentEndDate;
