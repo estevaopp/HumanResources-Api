@@ -8,8 +8,8 @@ namespace HumanResources.Domain.Entities.Employees
 {
      public abstract class EmployeeEntity : EntityBase
     {
-        public int HcmEmployeeRoleEntityId { get; private set; }
         public decimal MonthlySalaryFixed { get; private set; }
+
         public decimal MonthlySalaryVariable { get; private set; }
 
         public EmployeeStatusEnum EmployeeStatus { get; private set; }
@@ -18,6 +18,10 @@ namespace HumanResources.Domain.Entities.Employees
 
         public DateOnly EmploymentEndDate { get; private set; }
 
+        public EmployeeSeniorityEnum EmployeeSeniority { get; private set; }
+
+        public int HcmEmployeeRoleEntityId { get; private set; }
+
         public virtual HcmEmployeeRoleEntity HcmEmployeeRoleEntity { get; }
 
         public virtual HcmPersonDetailEntity HcmPersonDetailEntity { get; }
@@ -25,7 +29,7 @@ namespace HumanResources.Domain.Entities.Employees
 
         protected EmployeeEntity() { }
 
-        protected EmployeeEntity(int hcmEmployeeRoleEntityId, decimal monthlySalaryFixed, decimal monthlySalaryVariable, EmployeeStatusEnum employeeStatus, DateOnly employmentStartDate, DateOnly employmentEndDate)
+        public EmployeeEntity(int hcmEmployeeRoleEntityId, decimal monthlySalaryFixed, decimal monthlySalaryVariable, EmployeeStatusEnum employeeStatus, DateOnly employmentStartDate, DateOnly employmentEndDate, EmployeeSeniorityEnum employeeSeniority)
         {
             HcmEmployeeRoleEntityId = hcmEmployeeRoleEntityId;
             MonthlySalaryFixed = monthlySalaryFixed;
@@ -33,6 +37,7 @@ namespace HumanResources.Domain.Entities.Employees
             EmployeeStatus = employeeStatus;
             EmploymentStartDate = employmentStartDate;
             EmploymentEndDate = employmentEndDate;
+            EmployeeSeniority = employeeSeniority;
         }
 
 

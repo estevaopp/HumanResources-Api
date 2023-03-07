@@ -5,15 +5,13 @@ namespace HumanResources.Domain.Entities.Employees
     public class HcmEmployeeRoleEntity : EntityBase
     {
         public string Name { get; set; }
-        public EmployeeSeniorityEnum EmployeeSeniority { get; private set; }
 
 
         protected HcmEmployeeRoleEntity(){ }
 
-        public HcmEmployeeRoleEntity(string name, EmployeeSeniorityEnum employeeSeniority)
+        public HcmEmployeeRoleEntity(string name)
         {
             Name = name;
-            EmployeeSeniority = employeeSeniority;
         }
     }
 }
