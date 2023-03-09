@@ -14,5 +14,12 @@ namespace HumanResources.Infra.Data.Context
         public DbSet<EmployeeEntity> EmployeeEntities { get; set; }
         public DbSet<HcmEmployeeRoleEntity> HcmEmployeeRoleEntities { get; set; }
         public DbSet<HcmPersonDetailEntity> HcmPersonDetailEntities { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+        }
     }
 }

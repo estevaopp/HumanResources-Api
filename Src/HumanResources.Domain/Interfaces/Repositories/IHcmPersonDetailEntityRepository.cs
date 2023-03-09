@@ -9,14 +9,14 @@ namespace HumanResources.Domain.Interfaces.Repositories
     public interface IHcmPersonDetailEntityRepository
     {
         
-        Task<HcmPersonDetailEntity> GetAll();
+        Task<IEnumerable<HcmPersonDetailEntity>> GetAll();
 
         Task<HcmPersonDetailEntity> GetById(int id);
 
-        Task<HcmPersonDetailEntity> Add(HcmPersonDetailEntity hcmPersonDetailEntity);
+        Task Add(HcmPersonDetailEntity hcmPersonDetailEntity);
 
-        Task<HcmPersonDetailEntity> Delete(HcmPersonDetailEntity hcmPersonDetailEntity);
+        Task Delete(HcmPersonDetailEntity hcmPersonDetailEntity);
 
-        Task<HcmPersonDetailEntity> Update(HcmPersonDetailEntity hcmPersonDetailEntity);
+        Task Update(HcmPersonDetailEntity hcmPersonDetailEntity);
     }
 }

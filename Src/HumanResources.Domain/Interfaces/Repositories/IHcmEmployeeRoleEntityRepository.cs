@@ -8,14 +8,14 @@ namespace HumanResources.Domain.Interfaces.Repositories
 {
     public interface IHcmEmployeeRoleEntityRepository
     {
-        Task<HcmEmployeeRoleEntity> GetAll();
+        Task<IEnumerable<HcmEmployeeRoleEntity>> GetAll();
 
         Task<HcmEmployeeRoleEntity> GetById(int id);
 
-        Task<HcmEmployeeRoleEntity> Add(HcmEmployeeRoleEntity hcmEmployeeRoleEntity);
+        Task Add(HcmEmployeeRoleEntity hcmEmployeeRoleEntity);
 
-        Task<HcmEmployeeRoleEntity> Delete(HcmEmployeeRoleEntity hcmEmployeeRoleEntity);
+        Task Delete(HcmEmployeeRoleEntity hcmEmployeeRoleEntity);
 
-        Task<HcmEmployeeRoleEntity> Update(HcmEmployeeRoleEntity hcmEmployeeRoleEntity);
+        Task Update(HcmEmployeeRoleEntity hcmEmployeeRoleEntity);
     }
 }
