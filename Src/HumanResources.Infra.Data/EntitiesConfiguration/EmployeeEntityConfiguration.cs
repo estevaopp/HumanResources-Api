@@ -16,6 +16,19 @@ namespace HumanResources.Infra.Data.EntitiesConfiguration
             builder.Property(e => e.Id).ValueGeneratedOnAdd();
 
             builder.Property(e => e.MonthlySalaryFixed).IsRequired().HasPrecision(8,2);
+
+            builder.Property(e => e.MonthlySalaryVariable).IsRequired().HasPrecision(8,2);
+
+            builder.Property(e => e.EmployeeStatus).IsRequired().HasConversion<int>();
+
+            builder.Property(e => e.EmploymentEndDate);
+
+            builder.Property(e => e.EmploymentStartDate).IsRequired();
+
+            builder.Property(e => e.EmployeeSeniority).IsRequired().HasConversion<int>();
+
+            builder.HasOne(e => e.HcmEmployeeRoleEntity).WithMany(e => e.Employees).HasForeignKey(e => e.HcmEmployeeRoleEntityId);
+            builder.Property(e => e.HcmEmployeeRoleEntityId).IsRequired();
         }
     }
 }

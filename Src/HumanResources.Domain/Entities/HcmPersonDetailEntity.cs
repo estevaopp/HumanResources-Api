@@ -4,23 +4,23 @@ namespace HumanResources.Domain.Entities.Employees
 {
     public class HcmPersonDetailEntity : EntityBase
     {
-        public int EmployeeEntityId { get; }
+        public int EmployeeEntityId { get; private set; }
         
-        public string FirstName { get; }
+        public string FirstName { get; private set; }
 
-        public string MiddleName { get; }
+        public string MiddleName { get; private set; }
 
-        public string LastName { get; }
+        public string LastName { get; private set; }
 
-        public string Email { get; }
+        public string Email { get; private set; }
 
-        public string CellPhoneNumber { get; }
+        public string CellPhoneNumber { get; private set; }
 
-        public string Cpf { get; }
+        public string Cpf { get; private set; }
 
-        public DateOnly Birthdate { get; }
+        public DateOnly Birthdate { get; private set; }
 
-        public GenderEnum Gender { get; }
+        public GenderEnum Gender { get; private set; }
 
         public virtual EmployeeEntity EmployeeEntity { get; }
 
