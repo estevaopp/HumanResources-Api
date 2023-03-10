@@ -14,6 +14,8 @@ namespace HumanResources.Infra.Data.EntitiesConfiguration
         {
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id).ValueGeneratedOnAdd();
+
+            builder.Property(e => e.MonthlySalaryFixed).IsRequired().HasPrecision(8,2);
         }
     }
 }
