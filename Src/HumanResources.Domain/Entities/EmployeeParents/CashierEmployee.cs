@@ -17,5 +17,10 @@ namespace HumanResources.Domain.Entities.EmployeeParents
         {
             throw new NotImplementedException();
         }
+
+        public override string ToString()
+        {
+            return "Caixa";
+        }
     }
 }

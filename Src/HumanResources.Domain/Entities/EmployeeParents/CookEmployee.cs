@@ -17,5 +17,10 @@ namespace HumanResources.Domain.Entities.EmployeeParents
         {
             System.Console.WriteLine("Pagando um cozinheiro");
         }
+
+        public override string ToString()
+        {
+            return "Cozinheiro";
+        }
     }
 }

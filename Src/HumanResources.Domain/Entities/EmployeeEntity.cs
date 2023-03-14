@@ -6,7 +6,7 @@ using HumanResources.Domain.Enums;
 
 namespace HumanResources.Domain.Entities.Employees
 {
-     public abstract class EmployeeEntity : EntityBase
+     public class EmployeeEntity : EntityBase
     {
         public decimal MonthlySalaryFixed { get; private set; }
 
@@ -41,9 +41,15 @@ namespace HumanResources.Domain.Entities.Employees
         }
 
 
-        public abstract void Payroll();
+        public virtual void Payroll()
+        {
+            throw new Exception("Função não implementada");
+        }
 
-        public abstract void DismissEmployee();
+        public virtual void DismissEmployee()
+        {
+            throw new Exception("Função não implementada");
+        }
 
         public void MissWork()
         {
