@@ -40,6 +40,17 @@ namespace HumanResources.Domain.Entities.Employees
             EmployeeSeniority = employeeSeniority;
         }
 
+        public void Update(int hcmEmployeeRoleEntityId, decimal monthlySalaryFixed, decimal monthlySalaryVariable, EmployeeStatusEnum employeeStatus, DateOnly employmentStartDate, DateOnly employmentEndDate, EmployeeSeniorityEnum employeeSeniority)
+        {
+            HcmEmployeeRoleEntityId = hcmEmployeeRoleEntityId;
+            MonthlySalaryFixed = monthlySalaryFixed;
+            MonthlySalaryVariable = monthlySalaryVariable;
+            EmployeeStatus = employeeStatus;
+            EmploymentStartDate = employmentStartDate;
+            EmploymentEndDate = employmentEndDate;
+            EmployeeSeniority = employeeSeniority;
+        }
+
 
         public virtual void Payroll()
         {
