@@ -1,0 +1,2 @@
+dotnet ef migrations add Initial --project Src/HumanResources.Infra.Data -s Src/HumanResources.Api -c ApplicationDbContext --verbose;
+
